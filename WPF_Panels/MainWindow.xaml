@@ -1,0 +1,122 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="1000" MinWidth="785" MinHeight="455">
+    <Window.Resources>
+
+        <Style x:Key="references" TargetType="{x:Type TextBlock}">
+            <Setter Property="Margin" Value="0,0,25,0"/>
+            <Setter Property= "Width" Value="100"/>
+            <Setter Property="Text" Value="Reference"/>
+            <EventSetter Event="MouseEnter" Handler="TextBlock_MouseEnter"/>
+            <EventSetter Event="MouseLeave" Handler="TextBlock_MouseLeave"/>
+        </Style>
+
+
+
+
+    </Window.Resources>
+    <DockPanel >
+        <DockPanel DockPanel.Dock="Top">
+            <Grid Margin="45,20,10,20"  Width="35" Height="35" DockPanel.Dock="Left">
+                <Rectangle    Stroke="#FF4288E6" Fill="#FF519AEC"/>
+                <TextBlock Text= "SS" Foreground="White" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+            <StackPanel  DockPanel.Dock="Right" Margin="0,0,20,0">
+                <StackPanel Orientation="Horizontal" Margin="0,20,0,0" Height="20" HorizontalAlignment="Right">
+                    <Rectangle Width="16" Height="16" Margin="0,0,10,0">
+                        <Rectangle.Fill>
+                            <ImageBrush ImageSource="Images/32officeicons-6_89731.png"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <TextBlock  Text="Share site" Height="16"  Width="59"  MouseEnter="TextBlock_MouseEnter" MouseLeave="TextBlock_MouseLeave"/>
+                </StackPanel>
+
+                <TextBox Name ="searchTextBox" Text="      Search" Height="20" Width="135" IsKeyboardFocusedChanged="searchTextBox_IsKeyboardFocusedChanged">
+                    <TextBox.Background>
+                        <ImageBrush AlignmentX="Left" ImageSource="Images/search_icon_153438.png" Stretch="Uniform" TileMode="None"/>
+                    </TextBox.Background>
+                </TextBox>
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Top" Margin="0,20,0,20">
+                <TextBlock   Text="Main title" FontSize="16" FontStyle="Italic" FontFamily="Adobe Garamond Pro Bold" Height="18" />
+                <StackPanel  Orientation="Horizontal" Height="20">
+                    <TextBlock  Style="{StaticResource references}" />
+                    <TextBlock  Style="{StaticResource references}"/>
+                    <TextBlock  Style="{StaticResource references}"/>
+                    <TextBlock  Style="{StaticResource references}"/>
+                    <TextBlock  Style="{StaticResource references}"/>
+                </StackPanel>
+            </StackPanel>
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Top" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" >
+            <Button DockPanel.Dock="Right" Width="70" Height="25" Background="#FF007ADF" Foreground="White" >
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="12" Height="12" Source="Images/3643750-draw-edit-pencil8.png" Margin="0,0,10,0"/>
+                    <Label Padding="0" Foreground="White">Editt</Label>
+                </StackPanel>
+            </Button>
+            <DockPanel Margin="4,0,4,0" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}">
+                <TextBlock DockPanel.Dock="Right" Text="Published" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                <TextBlock DockPanel.Dock="Left" Text="+ Content " VerticalAlignment="Center" Margin="45,0,0,0"/>
+            </DockPanel>
+        </DockPanel>
+        <ScrollViewer>
+            <StackPanel>
+                <Grid DockPanel.Dock="Top">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <DockPanel Grid.Column="2" Margin="30" >
+                        <TextBlock DockPanel.Dock="Top" Text="New" FontSize="18" Height="28" Width="Auto" Background="#FF054CD8" Foreground="White" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                        <TextBlock DockPanel.Dock="Top" Text="Realizar uno impresion" FontSize="18" Margin="0,15,0,15" FontWeight="Bold" FontFamily="Bahnschrift SemiBold"/>
+                        <TextBlock DockPanel.Dock="Bottom" Text ="ABOUIT COMUNICQATION SITES &gt;" Height="24" FontWeight="Bold" FontSize="16"  Foreground="#FF002FC1"/>
+                        <Rectangle DockPanel.Dock="Bottom" Height="3" Fill="#FF0015C1" Margin="0,0,0,15"/>
+                        <TextBlock  Text="Text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text " TextWrapping="WrapWithOverflow" LineHeight="7" TextAlignment="Justify"/>
+                    </DockPanel>
+                    <DockPanel Grid.Column="0" Grid.Row="1" Margin="30" >
+                        <TextBlock DockPanel.Dock="Top" Text="Contact" FontSize="18" Height="28" Width="Auto" Background="#FF054CD8" Foreground="White" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                        <TextBlock DockPanel.Dock="Top" Text="Compartir su estatega" FontSize="18" Margin="0,15,0,15" FontWeight="Bold" FontFamily="Bahnschrift SemiBold"/>
+                        <TextBlock DockPanel.Dock="Bottom" Text ="ABOUIT COMUNICQATION SITES &gt;" Height="24" FontWeight="Bold" FontSize="16"  Foreground="#FF002FC1"/>
+                        <Rectangle DockPanel.Dock="Bottom" Height="3" Fill="#FF0015C1" Margin="0,0,0,15"/>
+                        <TextBlock  Text="Text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text " TextWrapping="WrapWithOverflow" LineHeight="7" TextAlignment="Justify"/>
+                    </DockPanel>
+                    <DockPanel Grid.Column="2" Grid.Row="2" Margin="30" >
+                        <TextBlock DockPanel.Dock="Top" Text="Inovation" FontSize="18" Height="28" Width="Auto" Background="#FF054CD8" Foreground="White" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                        <TextBlock DockPanel.Dock="Top" Text="Realizar uno impresion" FontSize="18" Margin="0,15,0,15" FontWeight="Bold" FontFamily="Bahnschrift SemiBold"/>
+                        <TextBlock DockPanel.Dock="Bottom" Text ="ABOUIT COMUNICQATION SITES &gt;" Height="24" FontWeight="Bold" FontSize="16"  Foreground="#FF002FC1"/>
+                        <Rectangle DockPanel.Dock="Bottom" Height="3" Fill="#FF0015C1" Margin="0,0,0,15"/>
+                        <TextBlock  Text="Text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text " TextWrapping="WrapWithOverflow" LineHeight="7" TextAlignment="Justify"/>
+                    </DockPanel>
+                    <Image  Grid.ColumnSpan="2" Source="Images/1.png" Margin="3,0,0,0"/>
+                    <Image  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"  Source="Images/2.jpg" Margin="0,0,3,0"/>
+                    <Image  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="3,0,0,0" Source="Images/3.jpg" />
+                </Grid>
+                <TextBlock  Width="Auto" Height="Auto" Text="Image galary" FontSize="16" Foreground="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" Margin="30,40,0,15"/>
+                <UniformGrid  Rows="2" Columns="4" DockPanel.Dock="Bottom" Margin="30,0,30,50">
+                    <Image  Margin="5" Source="Images/1.png"/>
+                    <Image  Margin="5" Source="Images/3.jpg"/>
+                    <Image  Margin="5" Source="Images/2.jpg"/>
+                    <Image  Margin="5" Source="/Images/3.jpg"/>
+                    <Image  Margin="5" Source="Images/1.png"/>
+                    <Image  Margin="5" Source="Images/2.jpg"/>
+                    <Image  Margin="5" Source="Images/3.jpg"/>
+                    <Image  Margin="5" Source="Images/1.png"/>
+                </UniformGrid>
+            </StackPanel>
+        </ScrollViewer>
+    </DockPanel>
+
+
+</Window>
